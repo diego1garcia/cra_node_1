@@ -1,4 +1,4 @@
-// import React from 'react';
+import React from 'react';
 
 
 // const HelloWorld = () => {
@@ -16,6 +16,7 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import CartWidget from './CartWidget';
 
 function CollapsibleExample() {
   return (
@@ -42,7 +43,7 @@ function CollapsibleExample() {
           <Nav>
             <Nav.Link href="#aid">Help me!</Nav.Link>
             <Nav.Link eventKey={2} href="#memes">
-              Cart
+            <CartWidget/>
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>
