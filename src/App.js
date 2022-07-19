@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
-import HelloWorld from './components/NavBar';
-import ItemListContainer from './components/ItemListContainer';
+import HelloWorld from '../src/components/Nav/NavBar';
+import ItemListContainer from '../src/components/ItemList/ItemListContainer';
 import ItemCount from './components/ItemCount';
 // import Promises from './components/Promises';
 
