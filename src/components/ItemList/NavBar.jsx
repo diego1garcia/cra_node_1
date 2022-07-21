@@ -1,26 +1,13 @@
-import React from 'react';
+import React from "react";
+import {Navbar, Container, Nav, NavDropdown, Form, FormControl, Button} from "react-bootstrap"
+import CartWidget from "../CartWidget/CartWidget";
+import { Link } from "react-router-dom";
 
+const NavBar = () => {
 
-// const HelloWorld = () => {
-
-// };
-
-// export default HelloWorld;
-
-// const HelloWorld = () => {
-//     return <h2 onClick={alert("holamundo")} className = "App-link"> Hello World</h2>;
-// }
-
-// export default HelloWorld;
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
-import CartWidget from '../CartWidget/CartWidget';
-
-function CollapsibleExample() {
-  return (
-    <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+    return(
+        <>
+        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container>
         <Navbar.Brand href="#home">Egar´s Room</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -49,7 +36,8 @@ function CollapsibleExample() {
         </Navbar.Collapse>
       </Container>
     </Navbar>
-  );
-}
+    </>
 
-export default CollapsibleExample;
+)};
+
+export default NavBar; 
