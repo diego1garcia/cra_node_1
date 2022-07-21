@@ -9,7 +9,8 @@ const NavBar = () => {
         <>
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container>
-        <Navbar.Brand href="#home">Egar´s Room</Navbar.Brand>
+        <img src="https://i.pinimg.com/originals/60/86/f3/6086f3ea789e1beaa1f948e060a28a2c.png" width={20} alt="" />
+        <Navbar.Brand href="#home"> gar´s Room</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
