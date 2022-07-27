@@ -9,12 +9,14 @@ const NavBar = () => {
         <>
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container>
+        <Link className="navbar-brand" to={"/"}>
         <img src="https://i.pinimg.com/originals/60/86/f3/6086f3ea789e1beaa1f948e060a28a2c.png" width={20} alt="" />
         <Navbar.Brand href="#home"> gar´s Room</Navbar.Brand>
+        </Link>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
+            <Nav.Link href="#all">All</Nav.Link>
             <Nav.Link href="#we">What is Egar´s Room?</Nav.Link>
             <NavDropdown title="Products" id="collasible-nav-dropdown">
               <NavDropdown.Item href="#t-shirts/3.1">T-Shirts</NavDropdown.Item>
