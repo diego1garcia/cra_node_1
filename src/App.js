@@ -16,11 +16,14 @@ function App() {
         <Route index ="/" element={<ItemListContainer/>}/>
         <Route path="/category/:name" element={<ItemListContainer/>}/>
         <Route path="/item/:id" element={<ItemDetailContainer/>}/>
+        <Route path="/cart"element={<div>Cart Page</div>}/>
         <Route 
           path="*"
           element={
             <div style={{backgroundColor: "red"}}> Error 404 NOT FOUND </div>
           }
+        
+        
         />
       </Routes>
     </BrowserRouter>
