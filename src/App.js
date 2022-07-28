@@ -5,17 +5,18 @@ import ItemListContainer from './components/ItemList/ItemListContainer';
 import NavBar from "./components/ItemList/NavBar"
 import ItemDetailContainer from './components/ItemList/ItemDetailContainer';
 import {BrowserRouter, Routes, Route, Link} from "react-router-dom";
+import {useState} from "react";
 
 function App() {
-
+  const [amountItems, setAmountItems] = useState(0);
   return (
     <>
     <BrowserRouter>
-      <NavBar/>
+      <NavBar amountItems={amountItems}/>
       <Routes>
         <Route index ="/" element={<ItemListContainer/>}/>
         <Route path="/category/:name" element={<ItemListContainer/>}/>
-        <Route path="/item/:id" element={<ItemDetailContainer/>}/>
+        <Route path="/item/:id" element={<ItemDetailContainer setAmountItems={setAmountItems}/>}/>
         <Route path="/cart"element={<div>Cart Page</div>}/>
         <Route 
           path="*"

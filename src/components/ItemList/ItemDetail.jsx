@@ -3,13 +3,17 @@ import { useState } from "react";
 import ItemCount from "./ItemCount";
 import { useNavigate, Link, Navigate } from "react-router-dom";
 
-const ItemDetail = ({ item }) => {
+const ItemDetail = ({ item, setAmountItems }) => {
   const [amount, setAmount] = useState(0);
   const { title, price, stock, pictureUrl, id, discount } = item;
   const Navigate = useNavigate();
   const onAdd = (amount) => {
     setAmount(amount);
-    Navigate("/cart");
+    setAmountItems((prevState) => {
+      console.log(prevState);
+      return parseInt(prevState + 1);
+    });
+    // Navigate("/cart");
   };
   return (
     <div className="card" style={{ width: "20rem" }}>

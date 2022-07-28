@@ -1,11 +1,17 @@
+import { useState } from "react";
+import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+
+
 const CartWidget = () => {
-    const amount = 4;
+    const [amount, setAmount] = useState(0);
     return (   
-        <img className="container"
-        style={{width: 30}} 
-        src="https://thumbs.dreamstime.com/b/icono-de-las-compras-del-carro-la-compra-en-fondo-oscuro-116659167.jpg" alt="" />
-    
-    // {amount}
+        <div className="ps-4">
+            <FontAwesomeIcon icon={faShoppingCart}/>
+            <span className="ps-2">{amount}</span>
+
+        </div>
     );
 };
 

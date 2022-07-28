@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import detailedItems from "./utils/details.json";
 import Spinner from "../../Spinner";
 
-const ItemDetailContainer = () => {
+const ItemDetailContainer = ({setAmountItems}) => {
   const [item, setItem] = useState({});
   const [loading, setLoading] = useState(false);
   const params = useParams();
@@ -20,7 +20,7 @@ const ItemDetailContainer = () => {
       setLoading(false);
     });
   }, []);
-  return loading ? <Spinner /> : <ItemDetail item={item} />;
+  return loading ? <Spinner /> : <ItemDetail setAmountItems={setAmountItems} item={item} />;
 };
 
 export default ItemDetailContainer;

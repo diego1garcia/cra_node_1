@@ -3,7 +3,7 @@ import {Navbar, Container, Nav, NavDropdown, Form, FormControl, Button} from "re
 import CartWidget from "../CartWidget/CartWidget";
 import { Link } from "react-router-dom";
 
-const NavBar = () => {
+const NavBar = (amountItems) => {
 
     return(
         <>
@@ -33,7 +33,7 @@ const NavBar = () => {
           <Nav>
             <Nav.Link href="#aid">Help me!</Nav.Link>
             <Nav.Link eventKey={2} href="#memes">
-            <CartWidget/>
+            <CartWidget amountItems={amountItems}/>
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>
