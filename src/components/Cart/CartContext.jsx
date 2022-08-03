@@ -1,41 +1,33 @@
-import { createContext, useState } from "react";
+import React, { createContext, useState } from "react";
 export const GContext = createContext();
 
-const CartContext = ({ children }) => {
-  const [itemsCarrito, setItemCarrito] = useState([]);
-
+const CartContext = ({children}) => {
+  const [cartItems, setCartItem] = useState([]);
   const addItem = (item, quantity) => {
     const newItem = isInCart(item);
-    if (newItem) {
+    if (newItem){
       quantity = quantity + newItem.quantity;
-      setItemCarrito(
-        itemsCarrito.splice(
-          itemsCarrito.findIndex((element) => element.item.id === item.id),
+      setCartItem(
+        cartItems.splice(
+          cartItems.findIndex((element) => element.item.id === item.id),
           1
-        )
-      );
+      )
+    );
     }
-    setItemCarrito([...itemsCarrito, { item, quantity }]);
+    setCartItem([...cartItems, {item, quantity}])
   };
-
   const isInCart = (item) => {
-    return itemsCarrito.find((element) => element.item === item);
+    return cartItems.find((element) => element.item === item);
   };
-
   const clear = () => {
-    setItemCarrito([]);
+    setCartItem([])
   };
   const removeItem = (itemId) => {
-    setItemCarrito(itemsCarrito.filter((element) => element.item.id !== itemId));
-  };
+    setCartItem(cartItems.filter((element)=> element.item.id !== itemId))
+  }; 
 
-  const total = () => {
-    return itemsCarrito.reduce(
-      (valorAnterior, valorActual) => valorAnterior + valorActual.item.price * valorActual.quantity,
-      0
-    );
-  };
-  return <GContext.Provider value={{ itemsCarrito, addItem, removeItem, clear, total }}>{children}</GContext.Provider>;
+  return <GContext.Provider value={{ cartItems, setCartItem, addItem, isInCart, removeItem, clear}}>{children}</GContext.Provider>
+  ;
 };
 
 export default CartContext;

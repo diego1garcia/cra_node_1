@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import ItemDetail from "./ItemDetail";
 import { useParams } from "react-router-dom";
-import detailedItems from "./utils/details.json";
-import Spinner from "../../Spinner";
+import detailedItems from "../utils/data.json";
+import Spinner from "./../../Spinner";
 
-const ItemDetailContainer = ({setAmountItems}) => {
+const ItemDetailContainer = () => {
   const [item, setItem] = useState({});
   const [loading, setLoading] = useState(false);
   const params = useParams();
@@ -20,7 +20,7 @@ const ItemDetailContainer = ({setAmountItems}) => {
       setLoading(false);
     });
   }, []);
-  return loading ? <Spinner /> : <ItemDetail setAmountItems={setAmountItems} item={item} />;
+  return loading ? <Spinner /> : <ItemDetail item={item} />;
 };
 
 export default ItemDetailContainer;

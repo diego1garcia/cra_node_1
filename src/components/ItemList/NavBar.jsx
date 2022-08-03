@@ -1,9 +1,9 @@
 import React from "react";
 import {Navbar, Container, Nav, NavDropdown, Form, FormControl, Button} from "react-bootstrap"
-import CartItem from "../Cart/CartItem";
+import WidgetCart from "./WidgetCart";
 import { Link } from "react-router-dom";
 
-const NavBar = (amountItems) => {
+const NavBar = () => {
 
     return(
         <>
@@ -15,6 +15,7 @@ const NavBar = (amountItems) => {
         </Link>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
+        <WidgetCart />
           <Nav className="me-auto">
             <Nav.Link href="#all">All</Nav.Link>
             <Nav.Link href="#we">What is Egar´s Room?</Nav.Link>
@@ -33,7 +34,7 @@ const NavBar = (amountItems) => {
           <Nav>
             <Nav.Link href="#aid">Help me!</Nav.Link>
             <Nav.Link eventKey={2} href="#memes">
-            <CartItem amountItems={amountItems}/>
+           
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>
