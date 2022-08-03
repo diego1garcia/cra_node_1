@@ -4,12 +4,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 
 
-const CartWidget = () => {
-    const [amount, setAmount] = useState(0);
+const CartWidget = ({amountItems}) => {
+    
     return (   
         <div className="ps-4">
             <FontAwesomeIcon icon={faShoppingCart}/>
-            <span className="ps-2">{amount}</span>
+            <span className="ps-2">{amountItems}</span>
 
         </div>
     );

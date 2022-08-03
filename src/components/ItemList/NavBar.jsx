@@ -1,6 +1,6 @@
 import React from "react";
 import {Navbar, Container, Nav, NavDropdown, Form, FormControl, Button} from "react-bootstrap"
-import CartWidget from "../CartWidget/CartWidget";
+import CartItem from "../Cart/CartItem";
 import { Link } from "react-router-dom";
 
 const NavBar = (amountItems) => {
@@ -33,7 +33,7 @@ const NavBar = (amountItems) => {
           <Nav>
             <Nav.Link href="#aid">Help me!</Nav.Link>
             <Nav.Link eventKey={2} href="#memes">
-            <CartWidget amountItems={amountItems}/>
+            <CartItem amountItems={amountItems}/>
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>
