@@ -3,12 +3,13 @@ import { useState, useContext} from "react";
 import ItemCount from "./ItemCount";
 import { Link } from "react-router-dom";
 import { GContext } from "../Cart/CartContext";
-import CartContext  from "../Cart/CartContext";
+
 
 
 
 const ItemDetail = ({ item }) => {
   const { setCartItem } = useContext(GContext);
+  
   const [amount, setAmount] = useState(0);
   const { title, price, stock, pictureUrl, id, discount } = item;
   const onAdd = (amount) => {

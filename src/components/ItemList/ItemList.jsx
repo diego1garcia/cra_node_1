@@ -1,6 +1,6 @@
 
 
-import Item from "./Item"
+import Item from "./Item";
 
 const ItemList = ({items}) =>{
     return(

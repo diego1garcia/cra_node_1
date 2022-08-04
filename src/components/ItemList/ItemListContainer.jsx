@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import ItemList from "./ItemList";
-import data from "./utils/data.json";
+import data from "../utils/data.json";
 import { useParams } from "react-router-dom";
 import Spinner from "../../Spinner"
 

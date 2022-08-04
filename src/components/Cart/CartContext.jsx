@@ -2,7 +2,8 @@ import React, { createContext, useState } from "react";
 export const GContext = createContext();
 
 const CartContext = ({children}) => {
-  const [cartItems, setCartItem] = useState([]);
+  const [cartItems, setCartItem] = useState([]); //arreglo que introduce los elementos al carrito
+  //agrega item al carrito
   const addItem = (item, quantity) => {
     const newItem = isInCart(item);
     if (newItem){
@@ -15,6 +16,7 @@ const CartContext = ({children}) => {
     );
     }
     setCartItem([...cartItems, {item, quantity}])
+    
   };
   const isInCart = (item) => {
     return cartItems.find((element) => element.item === item);
