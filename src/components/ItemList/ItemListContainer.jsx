@@ -12,21 +12,21 @@ const ItemListContainer = () => {
   const { name } = useParams();
   const [items, setItems] = useState ([]);
   const [loading, setLoading] = useState(false)
-  const promise = new Promise ((resolve) => {
-    setTimeout(() => resolve(data), 3000)
-  });
+//   const promise = new Promise ((resolve) => {
+//     setTimeout(() => resolve(data), 3000)
+//   });
 
-  const getItem = ()=> {
-    promise.then((res) =>{
-     const products = res;
-     if (name) {
-       setItems(products.filter((product) => product.category == name))
-     }else {
-      setItems(products);
-     }
-      setLoading(false);
-  })
-};
+//   const getItem = ()=> {
+//     promise.then((res) =>{
+//      const products = res;
+//      if (name) {
+//        setItems(products.filter((product) => product.category == name))
+//      }else {
+//       setItems(products);
+//      }
+//       setLoading(false);
+//   })
+// };
 
   useEffect (() => {
     //   const db = getFirestore();
@@ -46,28 +46,21 @@ const ItemListContainer = () => {
     //     console.log(data);
     // });
 
+    setLoading(true);
     const db = getFirestore();
     const itemsCollection = collection(db, "items");
-    const filteredCollection = query(
-      itemsCollection,
-      where("query", "==", "jackets"),
-    );
-    getDocs(filteredCollection).then((snapshot)=> {
+    getDocs(itemsCollection).then((snapshot)=> {
       const data = snapshot.docs.map((doc) => ({
         id: doc.id,
       ...doc.data(),
 
       }));
-      console.log(data);
-    } );
+      setItems(data);
+      setLoading(false);
       
-   
-  
-
-
-
-      setLoading(true)
-      getItem();
+    } );
+       
+     
   
   }, [name]);
 
