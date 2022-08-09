@@ -11,7 +11,7 @@ import {getDoc, doc, getFirestore, collection, getDocs, query, where, limit} fro
 const ItemListContainer = () => {
   const { name } = useParams();
   const [items, setItems] = useState ([]);
-  const [loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState(true);
 //   const promise = new Promise ((resolve) => {
 //     setTimeout(() => resolve(data), 3000)
 //   });

@@ -8,13 +8,13 @@ import { GContext } from "../Cart/CartContext";
 
 
 const ItemDetail = ({ item }) => {
-  const { setCartItem } = useContext(GContext);
+  const { setCartItems } = useContext(GContext);
   
   const [amount, setAmount] = useState(0);
   const { title, price, stock, pictureUrl, id, discount } = item;
   const onAdd = (amount) => {
     setAmount(amount)
-    setCartItem((prevState) => [...prevState, { item, quantity: amount }]);
+    setCartItems((prevState) => [...prevState, { item, quantity: amount }]);
   };
 
   return (
@@ -27,11 +27,9 @@ const ItemDetail = ({ item }) => {
           (price * discount) / 100
         } | with a ${discount}% discount!`}</p>
       </div>
-      {amount == 0 ? (
-        <ItemCount stock={stock} initial={0} onAdd={onAdd} />
-      ) : (
-        <h1>{amount} items will be buy</h1>
-      )}
+      {amount == 0 && 
+        <ItemCount stock={stock} initial={0} onAdd={onAdd} /> }
+    
       <div className="d-flex justify-content-center my-3">
         <Link to="/cart/">
           <button className="btn btn-warning">Go to checkout</button>
