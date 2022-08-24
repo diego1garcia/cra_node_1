@@ -6,6 +6,7 @@ import ItemDetailContainer from './components/ItemList/ItemDetailContainer';
 import {BrowserRouter, Routes, Route, Link} from "react-router-dom";
 import CartContext from "./components/Cart/CartContext";
 import Cart from './components/ItemList/Cart';
+import ImprovableComp from './components/ImprobableComp/ImprobableComp';
 
 
 function App() {
@@ -16,7 +17,9 @@ function App() {
       <CartContext>
       <BrowserRouter> 
       <NavBar/>  
+      <ImprovableComp/>
       <Routes>
+      
       <Route index ="/" element={<ItemListContainer/>}/>
         <Route path="/category/:name" element={<ItemListContainer/>}/>
         <Route path="/Cart" element={<Cart/>}/>

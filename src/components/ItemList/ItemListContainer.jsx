@@ -12,39 +12,13 @@ const ItemListContainer = () => {
   const { name } = useParams();
   const [items, setItems] = useState ([]);
   const [loading, setLoading] = useState(true);
-//   const promise = new Promise ((resolve) => {
-//     setTimeout(() => resolve(data), 3000)
-//   });
+  const promise = new Promise((resolve) => {
+    setTimeout(() => resolve(data), 2020);
+  });
 
-//   const getItem = ()=> {
-//     promise.then((res) =>{
-//      const products = res;
-//      if (name) {
-//        setItems(products.filter((product) => product.category == name))
-//      }else {
-//       setItems(products);
-//      }
-//       setLoading(false);
-//   })
-// };
 
   useEffect (() => {
-    //   const db = getFirestore();
-    //   const docRef = doc(db, "items", "1");
-    //   getDoc(docRef).then((snapshot) => {
-    //    const data = {id: snapshot.id, ...snapshot.data()}; 
-       
-      
-    // });
-
-    // const db =getFirestore();
-    // const itemsCollection = collection(db, "items");
-    // getDocs(itemsCollection).then ((snapshot) => {
-    //   const data = snapshot.docs.map( (doc) => (
-    //     {id: doc.id,
-    //     ...doc.data()}));
-    //     console.log(data);
-    // });
+ 
 
     setLoading(true);
     const db = getFirestore();
