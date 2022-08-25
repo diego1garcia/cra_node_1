@@ -18,28 +18,28 @@ const Cart = () => {
   
   useEffect(() => {
     let total = 0;
-    cartItems.forEach(({ items, quantity }) => {
-      total += parseInt(items.price) * quantity;
+    cartItems.forEach(({ item, quantity }) => {
+      total += parseInt(item.price) * quantity;
     });
     setTotalPrice(total);
   }, [cartItems]);
   return (
     <>
       <ul>
-        {cartItems.map(({ items, quantity }) => (
+        {cartItems.map(({ item, quantity }) => (
           <>
-            <div key={items.id} className="card" style={{ width: "20rem" }}>
+            <div key={item.id} className="card" style={{ width: "20rem" }}>
               <img
                 className="card-img-top"
-                src={items.pictureUrl}
+                src={item.pictureUrl}
                 alt="Card image cap"
               />
               <div className="card-body d-flex flex-column justify-content-center">
-                <h5 className="card-title">{items.title}</h5>
-                <p className="card-text">{`${items.stock} units available!`}</p>
+                <h5 className="card-title">{item.title}</h5>
+                <p className="card-text">{`${item.stock} units available!`}</p>
                 <p className="card-text">{`$${
-                  ((items.price * items.discount) / 100) * quantity
-                } | with a ${items.discount}% discount!`}</p>
+                  ((item.price * item.discount) / 100) * quantity
+                } | with a ${item.discount}% discount!`}</p>
               </div>
             </div>
           </>

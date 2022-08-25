@@ -13,9 +13,9 @@ import {
  export const GContext = createContext();
 
 
-export const CartContext = createContext();
 
-const CartProvider = (props) => {
+
+const CartContext = (props) => {
   const [cartItems, setCartItems] = useState([]);
 
   const sendOrder = async (totalPrice, buyerData) => {
@@ -70,7 +70,7 @@ const CartProvider = (props) => {
   );
 };
 
-export default CartProvider;
+export default CartContext;
 
 
 // const CartContext = ({children}) => {

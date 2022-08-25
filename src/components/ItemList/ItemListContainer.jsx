@@ -12,9 +12,7 @@ const ItemListContainer = () => {
   const { name } = useParams();
   const [items, setItems] = useState ([]);
   const [loading, setLoading] = useState(true);
-  const promise = new Promise((resolve) => {
-    setTimeout(() => resolve(data), 2020);
-  });
+  
 
 
   useEffect (() => {
