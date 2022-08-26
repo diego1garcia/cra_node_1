@@ -1,7 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import { GContext } from "../Cart/CartContext";
 
-
 const Cart = () => {
   const [totalPrice, setTotalPrice] = useState(0);
   const { cartItems, sendOrder } = useContext(GContext);
@@ -45,16 +44,20 @@ const Cart = () => {
           </>
         ))}
       </ul>
-      <h1 className="bg-primary">{`Your total is: $${totalPrice}`}</h1>
-      <form onSubmit={handleSubmit}>
+        <h1 class="bg-primary">{`El total de su compra es de: $${totalPrice}`}</h1> 
+        <form onSubmit={handleSubmit}>
+        <h2>Nombre y Apellido</h2>
         <input type="text" />
+        <h2>E-Mail</h2>
         <input type="email" />
+        <h2>Telefono</h2>
         <input type="tel" />
         <button
+          // onClick={() => sendOrder(totalPrice)}
           type="submit"
           className="btn btn-info"
         >
-          Send order
+          Enviar Pedido
         </button>
       </form>
     </>

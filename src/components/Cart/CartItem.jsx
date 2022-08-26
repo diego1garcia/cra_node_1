@@ -1,7 +1,7 @@
-// import React from "react";
-// const cartItems = ({item}) => {
+import React from "react";
+const cartItems = ({item}) => {
 
-//     return (item.title)
-// }
+    return (item.title)
+}
 
-// export default cartItems;
+export default cartItems;

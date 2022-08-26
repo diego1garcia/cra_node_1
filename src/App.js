@@ -17,8 +17,9 @@ function App() {
       <CartContext>
       <BrowserRouter> 
       <NavBar/>  
-      <ImprovableComp/>
+      
       <Routes>
+      
       
       <Route index ="/" element={<ItemListContainer/>}/>
         <Route path="/category/:name" element={<ItemListContainer/>}/>
