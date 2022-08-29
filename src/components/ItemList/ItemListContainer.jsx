@@ -36,8 +36,9 @@ const ItemListContainer = () => {
   
   }, [name]);
 
-  if (loading) return <Spinner/>;
-  
+  if (loading) { return <Spinner/>;
+}
+
   return (
   <>
       <div className="mt-5">
