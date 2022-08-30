@@ -6,7 +6,7 @@ import ItemDetailContainer from './components/ItemList/ItemDetailContainer';
 import {BrowserRouter, Routes, Route, Link} from "react-router-dom";
 import CartContext from "./components/Cart/CartContext";
 import Cart from './components/ItemList/Cart';
-import ImprovableComp from './components/ImprobableComp/ImprobableComp';
+import { Footer } from './components/ItemList/Footer';
 
 
 function App() {
@@ -17,6 +17,7 @@ function App() {
       <CartContext>
       <BrowserRouter> 
       <NavBar/>  
+     
       
       <Routes>
       
@@ -38,6 +39,7 @@ function App() {
         
         
     </Routes>
+    <Footer/>
     </BrowserRouter>
 
     </CartContext>

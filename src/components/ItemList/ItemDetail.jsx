@@ -22,7 +22,9 @@ const ItemDetail = ({ item }) => {
       <div className="card-body d-flex flex-column justify-content-center">
         <h5 className="card-title">{title}</h5>
         <p className="card-text">{`${stock} unidades disponibles!`}</p>
-        <p className="card-text">{`$${(price * discount)/100} | with a ${discount}% count!`}</p>
+        {/* <p className="card-text">{`$${(price * discount)/100} | with a ${discount}% count!`}</p> */}
+       <p className="card-text">Estas seleccionando una prenda hecha con mucho amor</p>
+
       </div>
       {amount === 0 && <ItemCount stock={stock} initial={0} onAdd={onAdd} />}
       <div className="d-flex justify-content-center my-3">

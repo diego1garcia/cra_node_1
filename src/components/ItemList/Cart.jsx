@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import { GContext } from "../Cart/CartContext";
+import Card from 'react-bootstrap/Card';
 
 const Cart = () => {
   const [totalPrice, setTotalPrice] = useState(0);
@@ -11,6 +12,8 @@ const Cart = () => {
     const data = Array.from(inputs).map((input, index) => input.value);
     sendOrder(totalPrice, { name: data[0], mail: data[1], phone: data[2] });
   };
+
+
   
   useEffect(() => {
     let total = 0;
@@ -35,13 +38,24 @@ const Cart = () => {
                 <p className="card-text">{`${item.stock} disponibles!`}</p>
                 <p className="card-text">{`Total $${
                   item.price * quantity
-                } | with a ${item.discount}% discount!`}</p>
+                } | `}</p>
               </div>
             </div>
           </>
         ))}
       </ul>
-        <h1 className="bg-primary">{`Your total is: $${totalPrice}`}</h1>
+        {/* <h1 className="bg-primary">{`Your total is: $${totalPrice}`}</h1> */}
+        <Card style={{ width: '18rem' }}>
+        <Card.Body>
+        <Card.Title>Carrito</Card.Title>
+        <Card.Subtitle className="mb-2 text-muted">Su Total a Pagar es</Card.Subtitle>
+        <Card.Text>
+          ${totalPrice}
+        </Card.Text>
+        <Card.Link href="#">Completar Orden y Enviar</Card.Link>
+        
+      </Card.Body>
+    </Card>
         <form onSubmit={handleSubmit}>
         <div className="row g-2">
         <div className="col-md-8">
